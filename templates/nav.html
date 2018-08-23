@@ -1,35 +1,40 @@
 <nav class="navbar navbar-dark bg-dark navbar-expand-lg">
         <a class="navbar-brand" href="#">Logo</a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
+                <span class="navbar-toggler-icon"></span>
+        </button>
         
 
 <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
-    <ul class="navbar-nav mr-auto">
+        <ul class="navbar-nav mr-auto">
 
-        <li class="nav-item">
-            <a class="nav-link" href="#">Inicio</a>
-        </li>
+                <li class="nav-item">
+                <a class="nav-link" href="#">Inicio</a>
+                </li>
 
-        <li class="nav-item">
-                <a class="nav-link" href="#">Foro</a>
-        </li>
+                <li class="nav-item">
+                        <a class="nav-link" href="#">Foro</a>
+                </li>
 
-        <li class="nav-item">
-                <a class="nav-link" href="#">Login</a>
-        </li>
+                <li class="nav-item">
+                        <a class="nav-link" href="#">Login</a>
+                </li>
 
-        <li class="nav-item">
-                <a class="nav-link" href="#">Registrarte</a>
-        </li>
+                <li class="nav-item">
+                        <a class="nav-link" href="#">Registrarte</a>
+                </li>
 
-    </ul>
+        </ul>
 
+
+
+        <form action="hola" class="form-inline my-2 my-lg-0" method="POST">
+                {% from "macro.html" import search_field%}
+                {{ search_field(prueba.searched, class='form-control mr-sm-2')}}
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+        </form>
 </div>
-
-<form action="hola" class="form-inline" method="POST">
-        {% from "macro.html" import search_field%}
-        {{ search_field(prueba.searched, class='form-control mr-sm-2')}}
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
-    </form>
 
 </nav>
