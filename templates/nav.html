@@ -18,18 +18,27 @@
                         <a class="nav-link" href="#">Foro</a>
                 </li>
 
-                <li class="nav-item">
-                        <a class="nav-link" href="login">Login</a>
-                </li>
-
-                <li class="nav-item">
-                        <a class="nav-link" href="registro">Registrarte</a>
-                </li>
+                
                 {% if username %}
+                <li class="nav-item">
+                         <a class="nav-link" href="logeado">Tabla</a>
+                </li>
+                
                 <li class="nav-item">
                         <a class="nav-link" href="logout">Cerrar Seccion</a>
                 </li>
-                {% endif%}
+               
+
+                {% else %}
+                <li class="nav-item">
+                        <a class="nav-link" href="login">Login</a>
+                </li>
+        
+                <li class="nav-item">
+                        <a class="nav-link" href="registro">Registrarte</a>
+                </li>
+
+                {% endif %}
 
         </ul>
 

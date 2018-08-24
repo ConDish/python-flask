@@ -21,9 +21,12 @@ app.secret_key = 'hacking'
 def hello():
     
     search = forms.search(request.form)
+
+    if 'username' in session:
+        return render_template("index.html", searched = search, username = session["username"])
+    else:
+        return render_template("index.html", searched = search)
     
-    
-    return render_template("index.html", searched = search)
 
 @app.route("/registro", methods=['GET', 'POST'])
 def registrar():
