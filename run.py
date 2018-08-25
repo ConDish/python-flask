@@ -14,10 +14,6 @@ app.config["SQLALCHEMY_DATABASE_URI"] = dbdir
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 
 
-# host = os.environ.get('IP', 'https://python-flask-condish.c9users.io')
-# port = int(os.environ.get('PORT', 8080))
-
-
 
 @app.route("/", methods=['GET', 'POST'])
 def hello():
