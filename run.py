@@ -8,8 +8,6 @@ from models import Users
 
 
 
-
-
 app = Flask(__name__)
 db.init_app(app)
 app.secret_key = 'hacking'
@@ -65,8 +63,6 @@ def registrar():
     return render_template("registro.html", searched = search, registre = register)
 
 
-
-
 @app.route("/logeado", methods=['GET', 'POST'])
 def ir():
     search = forms.search(request.form)
@@ -111,9 +107,21 @@ def login():
     return render_template("login.html", form = login , searched = search)
 
 
+@app.route("/foro", methods=['GET', 'POST'])
+def foro():
+    search = forms.search(request.form)
+
+    if 'username' in session:
+
+        return render_template("foro.html", searched = search, username = session['username'])
+    else:
+        return render_template("foro.html", searched = search)
+
+
+
 
 if __name__ == "__main__":
 
     with app.app_context():
         db.create_all()
-    app.run(debug=False, port=5000)
+    app.run(debug=True, port=5000)
