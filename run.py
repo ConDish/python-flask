@@ -6,14 +6,14 @@ from models import db
 from models import Users
 
 
-dbdir = "sqlite:///" + os.path.abspath(os.getcwd()) + "/database.db"
+
 
 
 
 app = Flask(__name__)
 db.init_app(app)
 app.secret_key = 'hacking'
-app.config["SQLALCHEMY_DATABASE_URI"] = dbdir
+app.config["SQLALCHEMY_DATABASE_URI"] = "postgres://arjhprbqdjuxfz:2fedab1c6840c4c07e20622d13b973f67d469170f6dddbaee24919dd14700e4b@ec2-54-235-160-57.compute-1.amazonaws.com:5432/d7ipmac3li50cn"
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 
 
