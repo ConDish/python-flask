@@ -8,7 +8,7 @@ from models import Users
 
 dbdir = "sqlite:///" + os.path.abspath(os.getcwd()) + "/database.db"
 
-print(dbdir)
+
 
 app = Flask(__name__)
 db.init_app(app)
