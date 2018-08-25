@@ -12,6 +12,8 @@ dbdir = "sqlite:///" + os.path.abspath(os.getcwd()) + "/database.db"
 
 app = Flask(__name__)
 db.init_app(app)
+with app.app_context():
+    db.create_all()
 app.secret_key = 'hacking'
 app.config["SQLALCHEMY_DATABASE_URI"] = dbdir
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
@@ -114,6 +116,5 @@ def login():
 
 if __name__ == "__main__":
 
-    with app.app_context():
-        db.create_all()
+
     app.run(debug=False, port=5000)
