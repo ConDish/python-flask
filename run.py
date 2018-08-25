@@ -7,7 +7,6 @@ from models import Users
 
 
 
-print(dbdir)
 
 app = Flask(__name__)
 db.init_app(app)
